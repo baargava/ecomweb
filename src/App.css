@@ -39,6 +39,13 @@
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 
 }
+.container1{
+  margin-inline: 1em;
+  display: flex;
+  grid-gap: 2em;
+  flex-wrap: wrap;
+
+}
 .col1{
   width: 50%;
   height: 60vh;
@@ -207,7 +214,38 @@ input, textarea{
 .product_container{
   margin-top: 7em;
   display: flex;
-  gap: 10em;
-  margin-left: 8em;
+  gap: 9em;
+  margin-left: 5em;
 }
-
+.product_component--view{
+  display: flex;
+  flex-direction: column;
+}
+.product-filter-view{
+  margin-inline:2em ;
+}
+.grid-filter-column{
+   margin-left: -1em;
+}
+/*list view*/
+.containerlist{
+  width: 40em;
+  
+}
+.card{
+  display:'flex';
+  flex-direction: row;
+  margin-bottom: 1em;
+}
+.figurelist img{
+  width: 20em;
+  height: 10em;
+  margin-right: 1em;
+}
+.btn{
+  background-color: grey;
+}
+.btn:hover{
+  color: black;
+  background-color: white;
+}

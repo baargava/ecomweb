@@ -1,8 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './App.css'
-import Services from './Services'
-import Trusted from './Trusted'
+import Services from '../src/Components/Services'
+import Trusted from '../src/Components/Trusted'
 
 const Home = () => {
   return (

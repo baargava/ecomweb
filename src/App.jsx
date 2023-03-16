@@ -3,14 +3,14 @@ import { BrowserRouter, Route,Routes } from 'react-router-dom'
 import Home from './Home'
 import About from './About'
 import Contact from './Contact'
-import Cart from './Cart'
+import Cart from './Components/Cart'
 import SingleProduct from './SingleProduct'
 import Products from './Products'
 import Error from './Error'
 import Header from './Header'
-import Login from './Login'
+import Login from '../src/Components/Login'
 import './App.css'
-import Footer from './Footer'
+import Footer from '../src/Components/Footer'
 
 const App = () => {
   return (

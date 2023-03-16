@@ -1,10 +1,11 @@
 import React from 'react'
  import { useProductContext } from './Context/ProductContext';
- import ProductList from './ProductList'
- import SortComponent from './SortComponent'
- import FilterComponent from './FilterComponent';
+ import ProductList from '../src/Components/ProductList'
+ import SortComponent from '../src/Components/SortComponent'
+ import FilterComponent from '../src/Components/FilterComponent';
 import { useFilterContext } from './Context/FilterContext';
 import styled from 'styled-components'
+import { NavLink } from 'react-router-dom';
 
 const Products = () => {
 
@@ -29,15 +30,7 @@ const Products = () => {
     </>
   )
 }
-const Wrapper=styled.section`
-.grid-filter-column {
-  grid-template-columns: 0.2fr 1fr;
-}
-@media (max-width: ${({ theme }) => theme.media.mobile}) {
-  .grid-filter-column {
-    grid-template-columns: 1fr;
-  }
-}
-`
+
+
 
 export default Products

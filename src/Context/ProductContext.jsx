@@ -10,7 +10,9 @@ const API=`https://fakestoreapi.com/products`
 const initialState={
   isLoading:false,
   isError:false,
-  products:[]
+  products:[],
+  singleProduct:{},
+  isSingleLoading:false,
 }
 
 const AppProvider = ({ children }) => {
@@ -21,15 +23,25 @@ const AppProvider = ({ children }) => {
     try {
       const res = await axios.get(url);
       const products = await res.data;
-      console.log(
-        "🚀 ~ file: productcontex.js ~ line 18 ~ getProducts ~ products",
-        products
-      );
+     
       dispatch({type:'SET_API_DATA',payload:products})
     } catch (error) {
       dispatch({type:'SET_ERROR'})
     }
   }
+  // 2nd api call for single product
+  const getSingleProduct = async (url) => {
+    dispatch({ type: "SET_SINGLE_LOADING" });
+    try {
+      const res = await axios.get(url);
+      const singleProduct = await res.data;
+      dispatch({ type: "SET_SINGLE_PRODUCT", payload: singleProduct });
+    } catch (error) {
+      dispatch({ type: "SET_SINGLE_ERROR" });
+    }
+  };
+ 
+  
   useEffect(() => {
     getProducts(API);
   
@@ -37,7 +49,7 @@ const AppProvider = ({ children }) => {
   }, [])
   
   return (
-    <AppContext.Provider value={{...state}}>
+    <AppContext.Provider value={{...state,getSingleProduct}}>
       {children}
     </AppContext.Provider>
   );
